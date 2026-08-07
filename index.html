@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       
+       <!--Mobile Friendly-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Lunarexchan </title>
+        
+    <!--Font LinkS-->
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Doto:wght@100..900&family=Mystery+Quest&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap" rel="stylesheet">
+
+    </head>
+     
+     <!--CSS-->
+
+    <style>
+
+        
+     
+    
+       body {
+        margin: 0;
+        background-image: url(https://files.catbox.moe/p5wdz8.gif);
+        background-size: cover;
+       }
+     
+       .page-wrapper {
+        display: flex;
+        min-height: 100vh;
+       }
+
+       .side-bar {
+        width: 230px;
+        height: 100vh;
+        background-color: rgba(84, 19, 169, 0.7);
+        border-right: 3px solid rgba(200, 112,220);
+        display: flex;
+        flex-direction: column;
+        overflow: visible;
+        position: relative;
+    
+        
+       }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 20px rgb(1, 95, 142);
+               
+            }
+            50% {
+                box-shadow: 0 0 50px rgb(57, 244, 228);
+                
+            }   
+            100% {
+                box-shadow: 0 0 20px rgb(1, 95, 142);
+                border: 10 px solid rgb(255, 49, 183);
+            }
+        }
+        @keyframes pulse {
+  0% {
+    text-shadow: 0 0 5px rgb(255, 168, 125);
+    color: rgb(208, 255, 0);
+  }
+  50% {
+    text-shadow: 0 0 20px rgb(235, 255, 253), 0 0 40px rgb(155, 248, 255);
+    color: rgb(0, 255, 179);
+  }
+  100% {
+    text-shadow: 0 0 5px rgb(255, 193, 61);
+    color: rgb(204, 255, 0);
+  }
+}
+
+       .side-text {
+        color: aquamarine;
+        text-shadow: 0 0 2px rgb(194, 242, 246), 0 0 7px rgb(4, 134, 160);
+        font-family: 'Tapestry';
+        font-size: 25px;
+        padding-top: 20px;
+        text-align: center;
+       }
+
+       .audio-box {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 10px;
+        padding-top: 20px;
+        margin-top: auto;
+       }
+
+       a:hover {
+        color: rgb(6, 11, 107);
+        text-shadow: 0 0 2px rgb(255, 255, 255), 0 0 7px rgb(171, 133, 252);
+       }
+
+       .tab {
+        text-decoration: none;
+        color: aquamarine;
+        background-color: rgba(84, 19, 169, 0.7);
+        padding: 20px 8px;
+        border-left: none;
+        border: 2px solid rgba(200, 112,220);
+        font-size: 20px;
+        text-shadow: 0 0 2px rgb(194, 242, 246), 0 0 7px rgb(4, 134, 160);
+        font-family: 'Tapestry';
+        border-radius: 0 12px 12px 0;
+        transform: translateX(100%);
+        pointer-events: auto;
+        
+       }
+
+    
+
+       .executioner {
+        accent-color: rgba(84, 19, 169, 0.7);
+       }
+
+       .mutsuki img {
+        margin-top: 5px;
+        width: 200px;
+        height: 200px;
+        display: block;
+       }
+
+       .pulse {
+        animation: pulse 3s infinite ease-in-out;
+        color: rgb(255, 152, 207);
+        text-decoration: none;
+        font-family: 'Tapestry';
+        font-size: 20px;
+       }
+
+       .side-quotes {
+        font-family: 'Tapestry';
+        color: aquamarine;
+        text-shadow: 0 0 2px rgb(194, 242, 246), 0 0 7px rgb(4, 134, 160);
+        text-align: center;
+        padding: 5px;
+       }
+
+       .tab-links {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+        pointer-events: none;
+        z-index: 10;
+       }
+
+       .side-scroll {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: visible;
+       }
+
+       .welcome{
+        font-family: 'Tapestry';
+        color: rgb(141, 255, 236);
+        text-shadow: 0 0 5px rgb(245, 198, 255), 0 0 10px rgb(255, 0, 251), 0 0 20px rgb(255, 0, 115);
+        font-size: 60px;
+        position: absolute;
+        top: 10px;
+        right: 450px;
+       }
+
+       .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+       }
+       
+       @media (max-width: 600px) {
+    .page-wrapper {
+        flex-direction: column;
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .side-bar {
+        width: 100%;
+        height: auto;
+        position: static;
+        overflow: visible;
+    }
+
+    .side-scroll {
+        flex: none;
+        overflow-y: visible;
+        overflow-x: visible;
+    }
+
+    .welcome {
+        position: static;
+        text-align: center;
+        font-size: 32px;
+        padding: 10px;
+        right: auto;
+        top: auto;
+    }
+
+    .tab-links {
+        position: static;
+        width: 100%;
+        gap: 8px;
+        padding: 10px;
+        pointer-events: auto;
+        z-index: auto;
+    }
+
+    .tab {
+        transform: none;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 12px;
+    }
+
+    .main-content {
+        flex: none;
+        position: static;
+    }
+
+    .audio-box {
+        margin-top: 0;
+        justify-content: center;
+        padding: 15px 10px;
+    }
+}
+
+    </style>
+
+    <!--HTML-->
+ <body>
+    <div class="page-wrapper">
+       
+        <aside class="side-bar">
+           
+         <div class="side-scroll">
+            <aside class="mutsuki">
+                <img src="https://files.catbox.moe/44px3p.png">
+            </aside>
+            <div class="side-quotes">
+                <p class="sade">
+                “You say that my way of thinking cannot 
+                <br>
+                be tolerated?  What of it? The man who 
+                <br>
+                alters his way of thinking to suit othere is
+                <br>
+                a fool. My way of thinking is the result
+                <br>
+                of my reflections.  It is part of my inner
+                <br>
+                being,the way I am made. I do not contradict
+                <br>
+                them, andwould not even if I wished 
+                <br>
+                to. For my system, which you disapprove 
+                <br>
+                of is also mygreatest comfort in life, 
+                <br>
+                the source of all my happiness
+                <br>
+                 -it means more to me than 
+                 <br>
+                 my life itself.”
+                <br>
+                ― Marquis de Sade
+                <br>
+                <br>
+                <br>
+                "[The] prevailing event today is the
+                <br>
+                loss of individuation qua 
+                <br>
+                pauperization (cognitive impoverishment) 
+                <br>
+                 and the growth of information to 
+                 <br>
+                the detriment of knowledge. It
+                <br>
+                is what has been analyzed, for
+                <br>
+                example, as “cognitive overflow syndrome,” 
+                <br>
+                which, rather than facilitating
+                <br>
+                decision-making (the synthesis that
+                <br>
+                must follow from the analytic acquisition 
+                <br>
+                of knowledge), paralyzes it: information
+                <br>
+                is not transformed into knowledge or
+                <br>
+                savoir-faire but into an
+                <br>
+                accumulation of hard data.”
+                <br>
+                ― Bernard Stiegler
+            
+            
+            </p>
+            </div>
+          </div>
+
+            <div class="tab-links">
+                <a href="https://networking.harshkapadia.me/files/books/computer-networking-a-top-down-approach-8th-edition.pdf" class="tab">Computah</a>
+                <a href="https://sukebei.nyaa.si/view/3676371" class="tab">Diddy Hibi</a>
+                <a href="https://tss.asenheim.org/desire.html" class="tab">Surprise Me</a>
+                <a href="https://ikouchan.tokyo/ib/lounge/" class="tab">Suki... Janai!</a>
+                <a href="https://www.webcamtaxi.com/en/japan/tokyo/kabukicho-shinjuku-cam.html" class="tab">Whose Eyes Are Those Eyes?</a>
+                <a href="https://www.foolproofme.org/articles/395-the-dangers-of-randomly-clicking-links" class="tab pulse">CLICK ME!</a>
+                <a href="https://chat.yuri-project.net/#narrow/channel/3-general" class="tab">Yurifaggotry</a>
+                <a href="https://dreadfulrareday.github.io/LEMchan.github.io/" class="tab">Want More?</a>
+                <a href="https://cdromance.org/pc-98/shizuku-english-patched/" class="tab">Let's Get Denpa</a>
+                <a href="https://archive.org/details/violence.-without.a.-cause.-1969" class="tab">Nippon-cels</a>
+                <a href="https://conspiracies.win/" class="tab">Reliable News</a>
+            </div>
+            
+            
+            
+        </aside>
+        
+        <div class="main-content">
+
+            <p class="welcome">
+         Can You See Rabbits
+         <br>
+         On The Moon?
+        </p>
+
+        <div class="audio-box">
+        <audio controls autoplay muted loop class="executioner">
+            <source src="https://files.catbox.moe/7g8k2o.mp3" type="audio/mpeg">
+        </audio> 
+        </div>
+
+
+
+        </div>
+    
+
+     
+        
+    </div>
+     
+
+  
+  <script>
+  document.querySelectorAll('a').forEach(link => {
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+</body>
+    
+</html>
