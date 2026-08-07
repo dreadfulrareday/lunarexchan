@@ -159,12 +159,17 @@
         height: 100%;
         overflow-y: auto;
         overflow-x: hidden;
+        scrollbar-width: none;
         display: flex;
         flex-direction: column;
         gap: 17px;
         pointer-events: none;
         z-index: 10;
        }
+
+        .tab-links::-webkit-scrollbar {
+            display: none;
+        }
 
        .side-scroll {
         flex: 1;
