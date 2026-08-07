@@ -112,7 +112,7 @@
         text-shadow: 0 0 2px rgb(194, 242, 246), 0 0 7px rgb(4, 134, 160);
         font-family: 'Tapestry';
         border-radius: 0 12px 12px 0;
-        transform: translateX(100%);
+        width: 100%;
         pointer-events: auto;
         
        }
@@ -154,8 +154,11 @@
        .tab-links {
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100%;
+        left: 100%;
+        width: 180px;
+        height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
         display: flex;
         flex-direction: column;
         gap: 17px;
@@ -229,6 +232,7 @@
         width: 100%;
         box-sizing: border-box;
         border-radius: 12px;
+        pointer-events: auto;
     }
 
     .main-content {
